@@ -1,0 +1,11 @@
+rootProject.name = "Fake Product Identification Using Blockchain"
+
+include ':app'
+include ':capacitor-android'
+
+// ✅ Correct Capacitor module path
+project(':capacitor-android').projectDir = new File('../node_modules/@capacitor/android/capacitor')
+
+// ❌ Removed capacitor-cordova-android-plugins (handled automatically by Capacitor CLI)
+
+apply from: 'capacitor.settings.gradle'

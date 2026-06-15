@@ -1,0 +1,70 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace "com.example.productverifier"
+    compileSdk 35
+
+    defaultConfig {
+        applicationId "com.example.productverifier"
+        minSdk 24
+        targetSdk 35
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        // ✅ Force Java 17 compatibility
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+
+    kotlinOptions {
+        // ✅ Kotlin JVM 17
+        jvmTarget = "17"
+    }
+
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(17)
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    google()
+    mavenCentral()
+    flatDir {
+        dirs '../capacitor-cordova-android-plugins/src/main/libs', 'libs'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // ✅ AndroidX libraries
+    implementation "androidx.appcompat:appcompat:1.6.1"
+    implementation "androidx.core:core-splashscreen:1.0.1"
+    implementation "androidx.coordinatorlayout:coordinatorlayout:1.2.0"
+
+    // ✅ Capacitor core
+    implementation project(':capacitor-android')
+
+    // ✅ Kotlin runtime
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.9.23"
+
+    // ✅ Testing
+    testImplementation "junit:junit:4.13.2"
+    androidTestImplementation "androidx.test.ext:junit:1.1.5"
+    androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
+}
