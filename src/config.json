@@ -1,0 +1,5 @@
+{
+  "network": "sepolia",
+  "centralContractAddress": "0x9e46AdF415Ff340035926bcaC793369af4d3f4d5",
+  "apiBaseUrl": "http://192.168.1.36:3000/api"
+}
