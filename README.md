@@ -1,2 +1,0 @@
-# COUNTERFEIT-PREVENTION-USING-BLOCKCHAIN-WITH-ARTIFICIAL-INTELLIGENCE
-Counterfeit Prevention using Blockchain with Artificial Intelligence combines secure, tamper-proof blockchain technology with AI-driven analysis to detect fake products. Blockchain ensures transparent supply chain tracking and data integrity, while AI verifies authenticity using image analysis, pattern recognition, and anomaly detection globally.
